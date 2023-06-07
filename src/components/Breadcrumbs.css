@@ -1,0 +1,20 @@
+.Breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: .5rem;
+  background-color: var(--component-background);
+  border-bottom: 1px solid var(--background);
+  box-shadow: 0 8px 8px rgba(0,0,0,.125);
+}
+
+.Breadcrumbs__seperator {
+  font-size: .75rem;
+}
+
+.Breadcrumbs__crumb {
+  text-decoration: none;
+  color: white;
+}

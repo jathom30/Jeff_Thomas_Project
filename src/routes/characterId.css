@@ -1,0 +1,27 @@
+.CharacterId {
+  padding: 1rem;
+}
+
+.CharacterId__title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.CharacterId__bold {
+  font-weight: bold;
+}
+
+.CharacterId__tomato-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.CharacterId__section {
+  background-color: var(--component-background);
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+}
+
+.CharacterId__right-align {
+  text-align: right;
+  font-size: .75rem;
+}

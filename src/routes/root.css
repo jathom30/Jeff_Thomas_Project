@@ -1,0 +1,13 @@
+.Root nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--component-background);
+  padding: 1rem;
+  border-bottom: 1px solid var(--background);
+  box-shadow: 0 8px 8px rgba(0,0,0,.125);
+}
+
+.Root nav a {
+  font-size: 1.5rem;
+}

@@ -2,6 +2,10 @@
 
 This is a basic react-router project built in TypeScript with Vite.
 
+## View deployed app at:
+
+https://ephemeral-jelly-1afd13.netlify.app/
+
 ## To install and run:
 
 - Clone down this repo and `npm i`

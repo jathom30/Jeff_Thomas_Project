@@ -38,7 +38,7 @@ const MovieLink = ({ movie }: { movie: Movie }) => {
         <div>
           <FlexBox alignItems="center" gap='.5rem'>
             <img src={getTomatoIcon(movie.rottenTomatoesScore)} />
-            <p className="item-container__title">{movie.rottenTomatoesScore}%</p>
+            <p className="item-container__title">{Math.round(movie.rottenTomatoesScore)}%</p>
           </FlexBox>
           <h3>{movie.name}</h3>
         </div>

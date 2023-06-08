@@ -11,12 +11,14 @@ https://ephemeral-jelly-1afd13.netlify.app/
 - Clone down this repo and `npm i`
 - Then, run the app with `npm run dev`
 
+**NOTE: The API has some strong limits. Therefore, locally the app runs using mock data. However, the deployed app hits the actual API.**
+
 ## To test:
 
 - Run `npm run test`
 - To see test coverage, run `npm run coverage`
 
-NOTE: Test coverage and quality are, unfortunately, low due to time constraints.
+**NOTE: Test coverage and quality are, unfortunately, low due to time constraints.**
 
 ## Features within the app:
 

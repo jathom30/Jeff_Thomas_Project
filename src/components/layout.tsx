@@ -1,9 +1,9 @@
 import { FlexBox } from '.';
 import './layout.css'
 
-export const ListContainer = ({ title, children }: { title: React.ReactNode; children: React.ReactNode }) => (
+export const ListContainer = ({ title, children }: { title?: React.ReactNode; children: React.ReactNode }) => (
   <div className="ListContainer">
-    <h1>{title}</h1>
+    {title ? <h1>{title}</h1> : null}
     {children}
   </div>
 )

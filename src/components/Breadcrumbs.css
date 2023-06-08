@@ -1,15 +1,20 @@
 .Breadcrumbs {
   position: sticky;
   top: 69px;
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 1rem;
   overflow-x: auto;
   padding: .5rem;
   background-color: var(--component-background);
   border-bottom: 1px solid var(--background);
   box-shadow: 0 8px 8px rgba(0,0,0,.125);
+}
+
+.Breadcrumbs div {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
 }
 
 .Breadcrumbs__seperator {

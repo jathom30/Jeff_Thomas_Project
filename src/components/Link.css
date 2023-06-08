@@ -2,3 +2,11 @@
   color: white;
   text-decoration: none;
 }
+
+.Link__underline:hover {
+  text-decoration: underline;
+}
+
+.Link--is-active {
+  color: rgb(60, 204, 240);
+}

@@ -1,0 +1,14 @@
+.Search {
+  display: flex;
+  flex-direction: column; 
+  gap: .25rem;
+  font-size: .75rem;
+}
+
+.Search__input {
+  padding: .5rem;
+  font-size: 1rem;
+  border-radius: .25rem;
+  border: none;
+  outline: .5px solid white;
+}

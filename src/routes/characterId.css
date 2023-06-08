@@ -1,13 +1,7 @@
-.CharacterId {
-  padding: 1rem;
-}
-
-.CharacterId__title {
-  font-weight: bold;
-  font-size: 1.25rem;
-}
 .CharacterId__bold {
-  font-weight: bold;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
 }
 
 .CharacterId__tomato-icon {

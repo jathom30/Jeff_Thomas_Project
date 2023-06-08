@@ -1,9 +1,9 @@
-import { Character, Movie } from "./types";
+import { Character, Movie, Quote } from "./types";
 
 export const moviesMock: Movie[] = [
   {
     name: 'LOTR 1',
-    _id: '0',
+    _id: '5cd95395de30eff6ebccde5d',
     runtimeInMinutes: 60,
     budgetInMillions: 20,
     boxOfficeRevenueInMillions: 90,
@@ -13,7 +13,7 @@ export const moviesMock: Movie[] = [
   },
   {
     name: 'LOTR 2',
-    _id: '1',
+    _id: '5cd95395de30eff6ebccde5d',
     runtimeInMinutes: 90,
     budgetInMillions: 40,
     boxOfficeRevenueInMillions: 70,
@@ -75,5 +75,36 @@ export const charactersMock: Character[] = [
     "hair": "",
     "name": "Aragost",
     "wikiUrl": "http://lotr.wikia.com//wiki/Aragost"
+  }
+]
+
+export const quotesMock: Quote[] = [
+  {
+    "_id": "5cd96e05de30eff6ebcce7e9",
+    "dialog": "Deagol!",
+    "movie": "5cd95395de30eff6ebccde5d",
+    "character": "5cd99d4bde30eff6ebccfbc6",
+    "id": "5cd96e05de30eff6ebcce7e9"
+  },
+  {
+    "_id": "5cd96e05de30eff6ebcce7ea",
+    "dialog": "Deagol!",
+    "movie": "5cd95395de30eff6ebccde5d",
+    "character": "5cd99d4bde30eff6ebccfbc6",
+    "id": "5cd96e05de30eff6ebcce7ea"
+  },
+  {
+    "_id": "5cd96e05de30eff6ebcce827",
+    "dialog": "Bilbo once told me his part in this tale would end. That each of us must come and go in the telling. Bilbo's story was now over. There would be no more journeys for him, save one.",
+    "movie": "5cd95395de30eff6ebccde5d",
+    "character": "5cd99d4bde30eff6ebccfbc6",
+    "id": "5cd96e05de30eff6ebcce827"
+  },
+  {
+    "_id": "5cd96e05de30eff6ebcce83c",
+    "dialog": "What does he mean?",
+    "movie": "5cd95395de30eff6ebccde5d",
+    "character": "5cd99d4bde30eff6ebccfbc6",
+    "id": "5cd96e05de30eff6ebcce83c"
   }
 ]

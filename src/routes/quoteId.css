@@ -1,0 +1,10 @@
+.QuoteId__section {
+  background-color: var(--component-background);
+  padding: .5rem 1rem;
+  border-radius: .25rem;
+}
+
+.QuoteId__right-align {
+  text-align: right;
+  font-size: .75rem;
+}

@@ -1,12 +1,12 @@
 import { useLoaderData, useSearchParams } from 'react-router-dom'
-import { getCharacters } from "../api"
-import { Character } from '../api/types'
-import { FlexBox, Link, ListContainer, Pagination, Search } from '../components'
-import { useDebouncedCallback } from '../useDebouncedCallback'
+import { FlexBox, Link, ListContainer, Pagination, Search } from "../components";
+import { getQuotes } from '../api';
+import { useDebouncedCallback } from '../useDebouncedCallback';
+import { Quote } from '../api/types';
 
-const QUERY = 'character-query'
-const PAGE = 'character-page'
-const LIMIT = 'character-limit'
+const QUERY = 'quotes-query'
+const PAGE = 'quotes-page'
+const LIMIT = 'quotes-limit'
 
 // eslint-disable-next-line react-refresh/only-export-components
 export async function loader({ request }: { request: Request }) {
@@ -14,12 +14,12 @@ export async function loader({ request }: { request: Request }) {
   const query = url.searchParams.get(QUERY) || ''
   const limit = url.searchParams.get(LIMIT) || '20'
   const page = url.searchParams.get(PAGE) || '1'
-  const characters = await getCharacters(query, Number(limit), Number(page))
-  return { characters }
+  const quotes = await getQuotes(query, Number(limit), Number(page))
+  return { quotes }
 }
 
-export default function Characters() {
-  const { characters } = useLoaderData() as { characters: Character[] }
+export default function Quotes() {
+  const { quotes } = useLoaderData() as { quotes: Quote[] }
 
   const [searchParams, setSearchParams] = useSearchParams()
   const query = searchParams.get(QUERY) || ''
@@ -39,20 +39,19 @@ export default function Characters() {
   }, 300)
 
   return (
-    <ListContainer title="Lord of the Rings Characters">
-      <FlexBox flexDirection='column' gap='1rem'>
-        <Search onChange={onQueryChange} defaultValue={query} label='Character search' placeholder='Search for a character...' />
+    <ListContainer title="Lord of the Rings Quotes">
+      <FlexBox flexDirection="column" gap="1rem">
+        <Search onChange={onQueryChange} defaultValue={query} label="Quote search" placeholder='Search for a quote...' />
         <Pagination
           limit={limit}
           page={page}
           onLimitChange={(newLimit) => onParamChange(LIMIT, newLimit)}
           onPageChange={(newPage) => onParamChange(PAGE, newPage)}
         />
-
         <ListContainer.Body>
-          {characters.map(character => (
-            <Link key={character._id} to={`/characters/${character._id}`}>
-              <CharacterLink character={character} />
+          {quotes.map(quote => (
+            <Link key={quote._id} to={`/quotes/${quote._id}`}>
+              <QuoteLink quote={quote} />
             </Link>
           ))}
         </ListContainer.Body>
@@ -61,12 +60,11 @@ export default function Characters() {
   )
 }
 
-const CharacterLink = ({ character }: { character: Character }) => {
+const QuoteLink = ({ quote }: { quote: Quote }) => {
   return (
     <div className="item-container">
       <FlexBox alignItems='center' gap=".5rem">
-        <h3>{character.name}</h3>
-        <p>{character.race}</p>
+        <p className='overflow'>{quote.dialog}</p>
       </FlexBox>
     </div>
   )

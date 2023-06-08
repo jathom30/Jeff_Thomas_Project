@@ -2,7 +2,7 @@ import { useLoaderData } from 'react-router-dom'
 import { getMovieDetails } from '../api'
 import { Movie } from '../api/types'
 import './movieId.css'
-import { Breadcrumbs, FlexBox, GridBox } from '../components'
+import { Breadcrumbs, FlexBox, GridBox, ListContainer } from '../components'
 import { convertMinToHour, getTomatoIcon } from '../utils'
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -23,15 +23,12 @@ export default function MovieId() {
         { to: '/movies', label: 'Movies' },
         { to: '', label: movie.name },
       ]} />
-      <div className='MovieId'>
+      <ListContainer title={movie.name}>
         <FlexBox flexDirection="column" gap="2rem">
-          <FlexBox flexDirection='column'>
-            <h1>{movie.name}</h1>
-            <FlexBox alignItems="center" gap='.5rem'>
-              <img className='MovieId__tomato-icon' src={getTomatoIcon(movie.rottenTomatoesScore)} />
-              <p className="MovieId__title">{movie.rottenTomatoesScore}%</p>
-              <p>{convertMinToHour(movie.runtimeInMinutes)}</p>
-            </FlexBox>
+          <FlexBox alignItems="center" gap='.5rem'>
+            <img className='MovieId__tomato-icon' src={getTomatoIcon(movie.rottenTomatoesScore)} />
+            <p className="MovieId__title">{movie.rottenTomatoesScore}%</p>
+            <p>{convertMinToHour(movie.runtimeInMinutes)}</p>
           </FlexBox>
 
           <FlexBox flexDirection="column" gap='.5rem'>
@@ -56,7 +53,7 @@ export default function MovieId() {
             <p className='MovieId__right-align'>${movie.boxOfficeRevenueInMillions - movie.budgetInMillions}MM Profit</p>
           </FlexBox>
         </FlexBox>
-      </div>
+      </ListContainer>
     </>
   )
 }

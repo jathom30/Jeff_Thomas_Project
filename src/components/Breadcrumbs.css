@@ -1,4 +1,6 @@
 .Breadcrumbs {
+  position: sticky;
+  top: 69px;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;

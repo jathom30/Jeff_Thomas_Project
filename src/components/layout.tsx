@@ -1,3 +1,4 @@
+import { FlexBox } from '.';
 import './layout.css'
 
 export const ListContainer = ({ title, children }: { title: React.ReactNode; children: React.ReactNode }) => (
@@ -8,7 +9,7 @@ export const ListContainer = ({ title, children }: { title: React.ReactNode; chi
 )
 
 export const ListContainerGrid = ({ children }: { children: React.ReactNode }) => (
-  <div className="ListContainerGrid">{children}</div>
+  <FlexBox flexDirection='column' gap="1rem">{children}</FlexBox>
 )
 
 ListContainer.Body = ListContainerGrid

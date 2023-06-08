@@ -1,8 +1,10 @@
-import { useLoaderData, useSearchParams } from 'react-router-dom'
+import { useLoaderData, useNavigation, useSearchParams } from 'react-router-dom'
 import { getCharacters } from "../api"
 import { Character } from '../api/types'
 import { FlexBox, Link, ListContainer, Pagination, Search } from '../components'
 import { useDebouncedCallback } from '../useDebouncedCallback'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 const QUERY = 'character-query'
 const PAGE = 'character-page'
@@ -62,11 +64,17 @@ export default function Characters() {
 }
 
 const CharacterLink = ({ character }: { character: Character }) => {
+  const { state, location } = useNavigation()
+  const isFetching = state === 'loading' && location.pathname.includes(character._id)
+
   return (
     <div className="item-container">
-      <FlexBox alignItems='center' gap=".5rem">
-        <h3>{character.name}</h3>
-        <p>{character.race}</p>
+      <FlexBox justifyContent="space-between" alignItems="center">
+        <FlexBox alignItems='center' gap=".5rem">
+          <h3>{character.name}</h3>
+          <p>{character.race}</p>
+        </FlexBox>
+        {isFetching ? <FontAwesomeIcon icon={faSpinner} /> : null}
       </FlexBox>
     </div>
   )

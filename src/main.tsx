@@ -12,7 +12,7 @@ import Movies, { loader as movieLoader } from './routes/movies.tsx';
 import MovieId, { loader as movieDetailsLoader } from './routes/movieId.tsx';
 import Characters, { loader as charactersLoader } from './routes/characters.tsx';
 import CharacterId, { loader as characterDetailsLoader } from './routes/characterId.tsx';
-import Home from './routes/index.tsx';
+import Home from './routes/home.tsx';
 import Quotes, { loader as quotesLoader } from './routes/quotes.tsx';
 import QuoteId, { loader as quoteDetailsLoader } from './routes/quoteId.tsx';
 

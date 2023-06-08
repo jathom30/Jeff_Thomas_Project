@@ -7,7 +7,8 @@ export const convertMinToHour = (minutes: number) => {
   const remainder = hours % 1
   const wholeHours = Math.floor(hours)
   const hourString = wholeHours ? `${wholeHours}h` : ''
-  const wholeMinutes = Math.floor(remainder * 60)
-  const minutesString = wholeMinutes ? ` ${wholeMinutes}m` : ''
-  return `${hourString}${minutesString}`
+  const wholeMinutes = Math.round(remainder * 60)
+  const minutesString = wholeMinutes ? `${wholeMinutes}m` : ''
+  const space = hourString && minutesString ? ' ' : ''
+  return `${hourString}${space}${minutesString}`
 }

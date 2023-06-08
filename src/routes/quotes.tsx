@@ -1,8 +1,10 @@
-import { useLoaderData, useSearchParams } from 'react-router-dom'
+import { useLoaderData, useNavigation, useSearchParams } from 'react-router-dom'
 import { FlexBox, Link, ListContainer, Pagination, Search } from "../components";
 import { getQuotes } from '../api';
 import { useDebouncedCallback } from '../useDebouncedCallback';
 import { Quote } from '../api/types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
 const QUERY = 'quotes-query'
 const PAGE = 'quotes-page'
@@ -61,10 +63,14 @@ export default function Quotes() {
 }
 
 const QuoteLink = ({ quote }: { quote: Quote }) => {
+  const { state, location } = useNavigation()
+  const isFetching = state === 'loading' && location.pathname.includes(quote._id)
+
   return (
     <div className="item-container">
-      <FlexBox alignItems='center' gap=".5rem">
+      <FlexBox justifyContent="space-between" alignItems='center'>
         <p className='overflow'>{quote.dialog}</p>
+        {isFetching ? <FontAwesomeIcon icon={faSpinner} /> : null}
       </FlexBox>
     </div>
   )

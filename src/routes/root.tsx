@@ -4,6 +4,7 @@ import './root.css'
 
 export default function Root() {
   const { pathname } = useLocation()
+
   return (
     <div className='Root'>
       <nav className='Root__nav'>
